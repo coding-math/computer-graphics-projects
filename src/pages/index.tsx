@@ -1,3 +1,3 @@
 export * from './ProjectsPage';
-export * from './Windmill';
+export * from './WindmillPage';
 export * from './ClownPage';
