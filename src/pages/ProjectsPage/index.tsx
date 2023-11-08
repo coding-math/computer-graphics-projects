@@ -6,19 +6,18 @@ import windmillImage from '../../assets/images/windmill.jpg';
 
 const ProjectsPage = () => {
   return (
-    <>
-      <Container className="p-8">
-        <div className="mb-8 text-4xl font-sans font-semibold text-gray-800 text-center">
-          Computer Graphics - Projects
+    <div className="bg-raisin">
+      <Container className="p-8 bg-raisin min-h-[88vh]">
+        <div className="mb-8 text-4xl font-sans font-semibold text-white text-center">
+          CG Projects
         </div>
         <Grid container spacing={2} columns={12}>
           <Grid item xs={12} sm={5} md={4}>
             <ProjectCard
               image={windmillImage}
               projectName="Windmill"
-              description="dsdas"
+              description="In this interactive project, you can experience dynamic rotations within a canvas using keyboard and mouse commands."
               projectPath="/windmill"
-              codePath="#"
             />
           </Grid>
           <Grid item xs={12} sm={5} md={4}>
@@ -27,13 +26,12 @@ const ProjectsPage = () => {
               projectName="Clown"
               description="dsdas"
               projectPath="/clown"
-              codePath="#"
             />
           </Grid>
         </Grid>
       </Container>
       <Footer />
-    </>
+    </div>
   );
 };
 

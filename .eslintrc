@@ -80,7 +80,8 @@
     ],
     "curly": "error",
     "no-nested-ternary": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "func-names": "off"
   },
   "settings": {
     "react": {
