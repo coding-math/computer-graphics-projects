@@ -8,7 +8,6 @@ import { Footer } from '../../components';
 
 const WindmillPage = () => {
   useEffect(() => {
-    // aqui vai o código do windmill
     const maxSpeed = 0.2;
     let windmillAnimationFrameId: number | null = null;
     let isWindmillRotating = false;
@@ -321,11 +320,9 @@ const WindmillPage = () => {
       event.preventDefault();
 
       if (event.button === 0) {
-        // Left mouse button was clicked
         leftMousePressed = true;
         rightMousePressed = false;
       } else if (event.button === 2) {
-        // Right mouse button was clicked
         rightMousePressed = true;
         leftMousePressed = false;
       }
