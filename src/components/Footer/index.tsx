@@ -32,7 +32,7 @@ const Footer = () => {
             color="inherit"
             target="_blank"
           >
-            Matheuxito
+            matheuxito
           </Link>{' '}
           <FaGithub className="inline-block" />
         </div>
