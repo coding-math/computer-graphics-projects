@@ -36,7 +36,7 @@ const GamePage = () => {
             height={1080}
           />
           <div className="p-4">
-            <p className="font-semibold text-xl mb-3">Controls</p>
+            <p className="font-semibold text-xl mb-3">Coming soon...</p>
             <ul className="list-disc px-4">
               <li>1</li>
               <li>2</li>
