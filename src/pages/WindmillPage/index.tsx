@@ -364,10 +364,10 @@ const WindmillPage = () => {
             <ul className="list-disc px-4">
               <li>
                 Use the arrow keys on the keyboard to increase and decrease the
-                speed.
+                speed
               </li>
-              <li>Left-click with the mouse to reach maximum speed.</li>
-              <li>Right-click with the mouse to stop the windmill.</li>
+              <li>Left-click with the mouse to reach maximum speed</li>
+              <li>Right-click with the mouse to stop the windmill</li>
             </ul>
           </div>
         </div>
