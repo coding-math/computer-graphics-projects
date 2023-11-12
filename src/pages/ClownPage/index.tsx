@@ -26,11 +26,11 @@ const ClownPage = () => {
 
     function handleKeyPress(key: string): void {
       switch (key) {
-        case 'moveCameraLeft':
-          cameraPosition.x -= cameraPosition.x < 2 ? 0.1 : 0;
-          break;
         case 'moveCameraRight':
-          cameraPosition.x += cameraPosition.x > -2 ? 0.1 : 0;
+          cameraPosition.x += cameraPosition.x < 2 ? 0.1 : 0;
+          break;
+        case 'moveCameraLeft':
+          cameraPosition.x -= cameraPosition.x > -2 ? 0.1 : 0;
           break;
         case 'moveCameraUp':
           cameraPosition.y += cameraPosition.y < 2 ? 0.1 : 0;
