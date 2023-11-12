@@ -16,7 +16,7 @@ const ProjectsPage = () => {
             <ProjectCard
               image={windmillImage}
               projectName="Windmill"
-              description="In this interactive project, you can experience dynamic rotations within a canvas using keyboard and mouse commands."
+              description="Experience dynamic rotations within a canvas using keyboard and mouse commands."
               projectPath="/windmill"
             />
           </Grid>
@@ -24,7 +24,7 @@ const ProjectsPage = () => {
             <ProjectCard
               image={clownImage}
               projectName="Clown"
-              description="dsdas"
+              description="3D clown model with dynamic movements and animations."
               projectPath="/clown"
             />
           </Grid>
