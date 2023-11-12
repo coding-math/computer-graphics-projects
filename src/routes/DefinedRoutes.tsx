@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { ClownPage, ProjectsPage, WindmillPage } from '../pages';
+import { ClownPage, GamePage, ProjectsPage, WindmillPage } from '../pages';
 
 const DefinedRoutes = () => {
   return (
@@ -8,6 +8,7 @@ const DefinedRoutes = () => {
         <Route path="/" element={<ProjectsPage />} />
         <Route path="/windmill" element={<WindmillPage />} />
         <Route path="/clown" element={<ClownPage />} />
+        <Route path="/skyrings" element={<GamePage />} />
       </Route>
     </Routes>
   );
