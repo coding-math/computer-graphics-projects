@@ -20,9 +20,15 @@ const Footer = () => {
             color="inherit"
             target="_blank"
           >
-            Matheuxito
+            matheuxito
           </Link>{' '}
-          <FaGithub className="inline-block" />
+          <a
+            href="https://www.github.com/matheuxito"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaGithub className="inline-block" />
+          </a>
         </div>
         <div className="font-mono whitespace-nowrap inline-block sm:hidden">
           by{' '}
@@ -34,7 +40,13 @@ const Footer = () => {
           >
             matheuxito
           </Link>{' '}
-          <FaGithub className="inline-block" />
+          <a
+            href="https://www.github.com/matheuxito"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaGithub className="inline-block" />
+          </a>
         </div>
       </div>
     </footer>
