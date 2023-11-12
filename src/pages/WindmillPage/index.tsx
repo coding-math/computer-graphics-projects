@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useEffect } from 'react';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
@@ -85,7 +84,6 @@ const WindmillPage = () => {
     const { program } = windmill;
 
     gl.useProgram(program);
-    const positionBuffer = gl.createBuffer();
 
     const positionAttributeLocation = gl.getAttribLocation(
       program,
