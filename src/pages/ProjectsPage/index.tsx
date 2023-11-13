@@ -10,10 +10,11 @@ const ProjectsPage = () => {
     <div className="bg-raisin">
       <Container className="p-8 bg-raisin min-h-[88vh]">
         <div className="mb-8 text-4xl font-sans font-semibold text-white text-center">
-          CG Projects
+          <p className="hidden md:block">Computer Graphics Projects</p>
+          <p className="block md:hidden">CG Projects</p>
         </div>
         <Grid container spacing={2} columns={12}>
-          <Grid item xs={12} sm={5} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <ProjectCard
               image={WindmillImage}
               projectName="Windmill"
@@ -21,7 +22,7 @@ const ProjectsPage = () => {
               projectPath="/windmill"
             />
           </Grid>
-          <Grid item xs={12} sm={5} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <ProjectCard
               image={ClownImage}
               projectName="Clown"
@@ -29,7 +30,7 @@ const ProjectsPage = () => {
               projectPath="/clown"
             />
           </Grid>
-          <Grid item xs={12} sm={5} md={4}>
+          <Grid item xs={12} sm={6} md={4}>
             <ProjectCard
               image={AirplaneImage}
               projectName="SkyRings"
