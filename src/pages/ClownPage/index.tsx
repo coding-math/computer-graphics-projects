@@ -64,7 +64,9 @@ const ClownPage = () => {
     }
 
     function init() {
-      const canvas = document.getElementById('clown-canvas');
+      const canvas = document.getElementById(
+        'clown-canvas'
+      ) as HTMLCanvasElement | null;
       if (!canvas) {
         return;
       }
@@ -80,7 +82,29 @@ const ClownPage = () => {
       const renderer = new THREE.WebGLRenderer({ canvas });
       renderer.setSize(canvas.clientWidth, canvas.clientHeight);
 
-      const loader = new GLTFLoader();
+      const loadingManager = new THREE.LoadingManager();
+
+      const progressBar = document.getElementById(
+        'progress-bar'
+      ) as HTMLProgressElement | null;
+
+      loadingManager.onProgress = (url, loaded, total) => {
+        if (progressBar instanceof HTMLProgressElement) {
+          progressBar.value = (loaded / total) * 100;
+        }
+      };
+
+      const progressBarContainer = document.getElementById(
+        'progress-bar-container'
+      ) as HTMLDivElement | null;
+
+      loadingManager.onLoad = () => {
+        if (progressBarContainer instanceof HTMLDivElement) {
+          progressBarContainer.classList.add('hidden');
+        }
+      };
+
+      const loader = new GLTFLoader(loadingManager);
       loader.load(ClownModel, gltf => {
         const object = gltf.scene;
 
@@ -134,13 +158,25 @@ const ClownPage = () => {
         <div className="mb-8 text-4xl font-sans font-semibold text-white text-center mt-4 md:mt-0">
           Clown
         </div>
-        <div className="bg-white rounded-lg w-full md:w-3/5 lg:w-1/2 mx-auto">
+        <div className="bg-white rounded-lg w-full md:w-3/5 lg:w-1/2 mx-auto relative">
           <canvas
             id="clown-canvas"
             className="aspect-square rounded-t-lg w-full"
             width={1000}
             height={1000}
           />
+          <div
+            id="progress-bar-container"
+            className="absolute left-0 top-0 w-full aspect-square rounded-t-lg flex flex-col justify-center items-center bg-black cursor-wait"
+          >
+            <div className="text-white text-lg">Loading...</div>
+            <progress
+              id="progress-bar"
+              className="w-2/5 h-2 mt-2"
+              value="0"
+              max="100"
+            />
+          </div>
           <div className="p-4">
             <p className="font-semibold text-xl mb-3">Controls</p>
             <ul className="list-disc px-4">
