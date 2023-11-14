@@ -28,13 +28,25 @@ const GamePage = () => {
         <div className="mb-8 text-4xl font-sans font-semibold text-white text-center mt-4 md:mt-0">
           SkyRings
         </div>
-        <div className="bg-white rounded-lg w-full mx-auto">
+        <div className="relative bg-white rounded-lg w-full mx-auto">
           <canvas
             id="game-canvas"
             className="aspect-video rounded-t-lg w-full"
             width={1920}
             height={1080}
           />
+          <div
+            id="progress-bar-container"
+            className="absolute left-0 top-0 w-full aspect-video rounded-t-lg flex flex-col justify-center items-center bg-black cursor-wait"
+          >
+            <div className="text-white text-lg">Loading...</div>
+            <progress
+              id="progress-bar"
+              className="w-2/5 h-2 mt-2"
+              value="0"
+              max="100"
+            />
+          </div>
           <div className="p-4">
             <p className="font-semibold text-xl mb-3">Coming soon...</p>
             <ul className="list-disc px-4">
