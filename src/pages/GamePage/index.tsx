@@ -46,7 +46,7 @@ const GamePage = () => {
               <directionalLight
                 castShadow
                 color="#f3d29a"
-                intensity={1}
+                intensity={0.3}
                 position={[10, 5, 4]}
                 shadow-bias={-0.0005}
                 shadow-mapSize-width={1024}
