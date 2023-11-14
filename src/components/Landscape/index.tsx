@@ -53,7 +53,7 @@ const Landscape = (props: JSX.IntrinsicElements['group']) => {
 
   useEffect(() => {
     const landscapeMat = materials.landscape;
-    landscapeMat.envMapIntensity = 0.75;
+    landscapeMat.envMapIntensity = 0.35;
   }, [materials]);
 
   return (
