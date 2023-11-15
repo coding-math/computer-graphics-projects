@@ -58,7 +58,7 @@ const Landscape = (props: JSX.IntrinsicElements['group']) => {
 
   return (
     <group {...props} dispose={null} scale={[10, 10, 10]}>
-      <group rotation={[-Math.PI / 2, 0, 0]}>
+      <group rotation={[-Math.PI / 2, 0, 2]}>
         <mesh
           castShadow
           receiveShadow
