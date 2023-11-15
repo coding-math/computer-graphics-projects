@@ -1,24 +1,21 @@
-/* eslint-disable react/no-unknown-property */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { useEffect } from 'react';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
-import {
-  Environment,
-  OrbitControls,
-  PerspectiveCamera
-} from '@react-three/drei';
+import { Environment, PerspectiveCamera } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { Footer, Landscape } from '../../components';
-import { Airplane } from '../../components';
-import { SphereEnv } from '../../components';
+import { EffectComposer, HueSaturation } from '@react-three/postprocessing';
+import { BlendFunction } from 'postprocessing';
+import {
+  Airplane,
+  Footer,
+  Landscape,
+  MotionBlur,
+  Rings,
+  SphereEnv
+} from '../../components';
 import hdrTexture from '../../assets/textures/envmap.hdr';
 
 const GamePage = () => {
-  useEffect(() => {
-    // teste
-  }, []);
   return (
     <div className="bg-raisin">
       <Container className="p-8 bg-raisin  min-h-[88vh]">
@@ -38,11 +35,11 @@ const GamePage = () => {
               <Environment background={false} files={hdrTexture} />
 
               <PerspectiveCamera makeDefault position={[0, 10, 10]} />
-              <OrbitControls target={[0, 0, 0]} />
 
               <Landscape />
-
               <Airplane />
+              <Rings />
+
               <directionalLight
                 castShadow
                 color="#f3d29a"
@@ -58,6 +55,15 @@ const GamePage = () => {
                 shadow-camera-left={-6.2}
                 shadow-camera-right={6.4}
               />
+
+              <EffectComposer>
+                <MotionBlur />
+                <HueSaturation
+                  blendFunction={BlendFunction.NORMAL}
+                  hue={0.15}
+                  saturation={0.15}
+                />
+              </EffectComposer>
             </Canvas>
           </div>
           <div
