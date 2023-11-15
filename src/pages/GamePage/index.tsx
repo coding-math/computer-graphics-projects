@@ -79,12 +79,18 @@ const GamePage = () => {
             />
           </div>
           <div className="p-4">
-            <p className="font-semibold text-xl mb-3">Coming soon...</p>
+            <p className="font-semibold text-xl mb-3">Controls</p>
             <ul className="list-disc px-4">
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
+              <li className="mb-3">
+                <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> Move the
+                plane
+              </li>
+              <li className="mb-3">
+                <kbd>Shift</kbd> Activates turbo
+              </li>
+              <li className="mb-3">
+                <kbd>R</kbd> Resets the plane&apos;s position
+              </li>
             </ul>
           </div>
         </div>
