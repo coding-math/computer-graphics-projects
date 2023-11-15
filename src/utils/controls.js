@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-param-reassign */
 /* eslint-disable import/no-mutable-exports */
 function easeOutQuad(x) {
   return 1 - (1 - x) * (1 - x);
@@ -20,7 +18,7 @@ let pitchVelocity = 0;
 const planeSpeed = 0.01;
 let turbo = 0;
 
-const updatePlaneAxis = (x, y, z, planePosition, camera) => {
+const updatePlaneAxis = (x, y, z, planePosition, camera, resetPlaneAxis) => {
   jawVelocity *= 0.95;
   pitchVelocity *= 0.95;
 
@@ -52,10 +50,7 @@ const updatePlaneAxis = (x, y, z, planePosition, camera) => {
     jawVelocity = 0;
     pitchVelocity = 0;
     turbo = 0;
-    x.set(1, 0, 0);
-    y.set(0, 1, 0);
-    z.set(0, 0, 1);
-    planePosition.set(0, 3, 7);
+    resetPlaneAxis();
   }
 
   x.applyAxisAngle(z, jawVelocity);

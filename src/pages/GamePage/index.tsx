@@ -1,7 +1,13 @@
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
-import { Environment, PerspectiveCamera } from '@react-three/drei';
+import { Suspense } from 'react';
+import {
+  Environment,
+  Html,
+  PerspectiveCamera,
+  useProgress
+} from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { EffectComposer, HueSaturation } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
@@ -13,7 +19,24 @@ import {
   Rings,
   SphereEnv
 } from '../../components';
+import { Score } from '../../components/UI';
 import hdrTexture from '../../assets/textures/envmap.hdr';
+
+const Loader = () => {
+  const { progress } = useProgress();
+  return (
+    <Html fullscreen className="bg-black flex justify-center items-center">
+      <div className="w-1/2 absolute flex flex-col justify-center items-center bg-black cursor-wait gap-16">
+        <div className="text-xl text-white">SkyRings</div>
+        <div className="w-full flex flex-col justify-center items-center">
+          <div className="text-white text-lg">
+            Loading {progress.toFixed()}%
+          </div>
+        </div>
+      </div>
+    </Html>
+  );
+};
 
 const GamePage = () => {
   return (
@@ -28,42 +51,45 @@ const GamePage = () => {
         <div className="mb-8 text-4xl font-sans font-semibold text-white text-center mt-4 md:mt-0">
           SkyRings
         </div>
-        <div className="relative bg-white rounded-lg w-full mx-auto">
+        <div className="relative bg-white rounded-lg w-full xl:w-4/5 mx-auto">
           <div id="game-canvas" className="aspect-video rounded-t-lg w-full">
             <Canvas>
-              <SphereEnv />
-              <Environment background={false} files={hdrTexture} />
+              <Suspense fallback={<Loader />}>
+                <SphereEnv />
+                <Environment background={false} files={hdrTexture} />
 
-              <PerspectiveCamera makeDefault position={[0, 10, 10]} />
+                <PerspectiveCamera makeDefault position={[0, 10, 10]} />
 
-              <Landscape />
-              <Airplane />
-              <Rings />
+                <Rings />
+                <Landscape />
+                <Airplane />
+                <Score />
 
-              <directionalLight
-                castShadow
-                color="#f3d29a"
-                intensity={0.3}
-                position={[10, 5, 4]}
-                shadow-bias={-0.0005}
-                shadow-mapSize-width={1024}
-                shadow-mapSize-height={1024}
-                shadow-camera-near={0.01}
-                shadow-camera-far={20}
-                shadow-camera-top={6}
-                shadow-camera-bottom={-6}
-                shadow-camera-left={-6.2}
-                shadow-camera-right={6.4}
-              />
-
-              <EffectComposer>
-                <MotionBlur />
-                <HueSaturation
-                  blendFunction={BlendFunction.NORMAL}
-                  hue={0.15}
-                  saturation={0.15}
+                <directionalLight
+                  castShadow
+                  color="#f3d29a"
+                  intensity={0.3}
+                  position={[10, 5, 4]}
+                  shadow-bias={-0.0005}
+                  shadow-mapSize-width={1024}
+                  shadow-mapSize-height={1024}
+                  shadow-camera-near={0.01}
+                  shadow-camera-far={20}
+                  shadow-camera-top={6}
+                  shadow-camera-bottom={-6}
+                  shadow-camera-left={-6.2}
+                  shadow-camera-right={6.4}
                 />
-              </EffectComposer>
+
+                <EffectComposer>
+                  <MotionBlur />
+                  <HueSaturation
+                    blendFunction={BlendFunction.NORMAL}
+                    hue={0.15}
+                    saturation={0.15}
+                  />
+                </EffectComposer>
+              </Suspense>
             </Canvas>
           </div>
           <div
