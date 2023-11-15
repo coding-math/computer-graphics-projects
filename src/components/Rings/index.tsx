@@ -1,18 +1,21 @@
-/* eslint-disable react/no-unknown-property */
 import { useFrame } from '@react-three/fiber';
 import React, { useMemo, useState } from 'react';
 import { BufferGeometry, Quaternion, TorusGeometry, Vector3 } from 'three';
 import { mergeBufferGeometries } from 'three-stdlib';
 import { planePosition } from '../Airplane';
+import { updateScore } from '../UI/Score';
+import scoreAudio from '../../assets/sounds/score.mp3';
 
 const randomPoint = (scale?: Vector3): Vector3 => {
   return new Vector3(
     Math.random() * 2 - 1,
-    Math.random() * 2 - 0.5,
+    Math.random() * 1.5 + 0.6,
     Math.random() * 2 - 1
   ).multiply(scale || new Vector3(1, 1, 1));
 };
 
+const score = new Audio(scoreAudio);
+const NUM_RINGS = 25;
 const RING_RADIUS = 0.2;
 
 interface Ring {
@@ -23,13 +26,16 @@ interface Ring {
 
 const handleHit = (ring: Ring) => {
   ring.hit = true;
+  score.currentTime = 0;
+  score.play();
+  updateScore();
 };
 
 const Rings: React.FC = () => {
   const [rings, setRings] = useState<Ring[]>(() => {
     const arr: Ring[] = [];
 
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < NUM_RINGS; i++) {
       arr.push({
         center: randomPoint(new Vector3(4, 2, 4)).add(
           new Vector3(0, 2 * Math.random() * 2, 0)
@@ -87,10 +93,14 @@ const Rings: React.FC = () => {
   });
 
   return (
-    <mesh geometry={geometry}>
-      <meshStandardMaterial roughness={0.5} metalness={0.5} />
-    </mesh>
+    <>
+      {geometry && (
+        <mesh geometry={geometry}>
+          <meshStandardMaterial roughness={0.5} metalness={0.5} />
+        </mesh>
+      )}
+    </>
   );
 };
 
-export { Rings };
+export { Rings, NUM_RINGS };
