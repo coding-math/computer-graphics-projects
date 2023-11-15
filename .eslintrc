@@ -55,6 +55,7 @@
     "react/require-default-props": "off",
     "react/no-array-index-key": "off",
     "react/no-unknown-property": "off",
+    "react/jsx-no-useless-fragment": "off",
     "no-param-reassign": "off",
     "react/jsx-filename-extension": [
       1,
