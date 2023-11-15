@@ -37,13 +37,25 @@ type GLTFResult = GLTF & {
 const x = new Vector3(1, 0, 0);
 const y = new Vector3(0, 1, 0);
 const z = new Vector3(0, 0, 1);
-const planePosition = new Vector3(0, 3, 7);
+const planePosition = new Vector3(0, 3, 8);
 
 const resetPlaneAxis = (): void => {
   x.set(1, 0, 0);
   y.set(0, 1, 0);
   z.set(0, 0, 1);
-  planePosition.set(0, 3, 7);
+  planePosition.set(0, 3, 8);
+};
+
+const handlePlanePosition = (): void => {
+  if (planePosition.x > 8 || planePosition.x < -8) {
+    resetPlaneAxis();
+  }
+  if (planePosition.z > 9 || planePosition.z < -8) {
+    resetPlaneAxis();
+  }
+  if (planePosition.y > 10 || planePosition.y < 0.6) {
+    resetPlaneAxis();
+  }
 };
 
 const delayedRotMatrix = new Matrix4();
@@ -56,17 +68,9 @@ const Airplane = (props: JSX.IntrinsicElements['group']) => {
   const helixMeshRef = useRef<THREE.Mesh>(null!);
 
   useFrame(({ camera }) => {
-    if (planePosition.x > 8 || planePosition.x < -8) {
-      resetPlaneAxis();
-    }
-    if (planePosition.z > 8 || planePosition.z < -8) {
-      resetPlaneAxis();
-    }
-    if (planePosition.y > 10 || planePosition.y < 1) {
-      resetPlaneAxis();
-    }
+    updatePlaneAxis(x, y, z, planePosition, camera, resetPlaneAxis);
 
-    updatePlaneAxis(x, y, z, planePosition, camera);
+    handlePlanePosition();
 
     const rotMatrix = new Matrix4().makeBasis(x, y, z);
 
@@ -176,6 +180,6 @@ const Airplane = (props: JSX.IntrinsicElements['group']) => {
   );
 };
 
-export { planePosition, Airplane };
+export { planePosition, Airplane, resetPlaneAxis };
 
 useGLTF.preload(AirplaneModel);
