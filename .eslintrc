@@ -53,6 +53,9 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/require-default-props": "off",
+    "react/no-array-index-key": "off",
+    "react/no-unknown-property": "off",
+    "no-param-reassign": "off",
     "react/jsx-filename-extension": [
       1,
       {
