@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unknown-property */
 import { useTexture } from '@react-three/drei';
 import { BackSide } from 'three';
 import texture from '../../assets/textures/envmap.jpg';
