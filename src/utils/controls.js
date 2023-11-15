@@ -5,7 +5,7 @@ function easeOutQuad(x) {
   return 1 - (1 - x) * (1 - x);
 }
 
-export const controls = {};
+const controls = {};
 
 window.addEventListener('keydown', e => {
   controls[e.key.toLowerCase()] = true;
@@ -17,10 +17,10 @@ window.addEventListener('keyup', e => {
 const maxVelocity = 0.04;
 let jawVelocity = 0;
 let pitchVelocity = 0;
-const planeSpeed = 0.006;
-export let turbo = 0;
+const planeSpeed = 0.01;
+let turbo = 0;
 
-export function updatePlaneAxis(x, y, z, planePosition, camera) {
+const updatePlaneAxis = (x, y, z, planePosition, camera) => {
   jawVelocity *= 0.95;
   pitchVelocity *= 0.95;
 
@@ -33,19 +33,19 @@ export function updatePlaneAxis(x, y, z, planePosition, camera) {
   }
 
   if (controls.a) {
-    jawVelocity += 0.003;
+    jawVelocity += 0.0025;
   }
 
   if (controls.d) {
-    jawVelocity -= 0.003;
+    jawVelocity -= 0.0025;
   }
 
   if (controls.w) {
-    pitchVelocity -= 0.0015;
+    pitchVelocity -= 0.0013;
   }
 
   if (controls.s) {
-    pitchVelocity += 0.0015;
+    pitchVelocity += 0.0013;
   }
 
   if (controls.r) {
@@ -82,4 +82,6 @@ export function updatePlaneAxis(x, y, z, planePosition, camera) {
   camera.updateProjectionMatrix();
 
   planePosition.add(z.clone().multiplyScalar(-planeSpeed - turboSpeed));
-}
+};
+
+export { controls, turbo, updatePlaneAxis };
