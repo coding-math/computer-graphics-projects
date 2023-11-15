@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber';
 import React, { useMemo, useState } from 'react';
 import { BufferGeometry, Quaternion, TorusGeometry, Vector3 } from 'three';
 import { mergeBufferGeometries } from 'three-stdlib';
-import { planePosition } from '..';
+import { planePosition } from '../Airplane';
 
 const randomPoint = (scale?: Vector3): Vector3 => {
   return new Vector3(
