@@ -61,8 +61,8 @@ const GamePage = () => {
                 <directionalLight
                   castShadow
                   color="#f3d29a"
-                  intensity={0.3}
-                  position={[10, 5, 4]}
+                  intensity={0.8}
+                  position={[10, 0, 7]}
                   shadow-bias={-0.0005}
                   shadow-mapSize-width={1024}
                   shadow-mapSize-height={1024}
@@ -70,8 +70,8 @@ const GamePage = () => {
                   shadow-camera-far={20}
                   shadow-camera-top={6}
                   shadow-camera-bottom={-6}
-                  shadow-camera-left={-6.2}
-                  shadow-camera-right={6.4}
+                  shadow-camera-left={-6}
+                  shadow-camera-right={6}
                 />
 
                 <EffectComposer>
