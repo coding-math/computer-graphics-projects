@@ -96,7 +96,12 @@ const Rings: React.FC = () => {
     <>
       {geometry && (
         <mesh geometry={geometry}>
-          <meshStandardMaterial roughness={0.5} metalness={0.5} />
+          <meshStandardMaterial
+            color="gold"
+            roughness={0.5}
+            metalness={0.5}
+            envMapIntensity={0.8}
+          />
         </mesh>
       )}
     </>
