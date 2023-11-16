@@ -2,12 +2,7 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 import { Suspense } from 'react';
-import {
-  Environment,
-  Html,
-  PerspectiveCamera,
-  useProgress
-} from '@react-three/drei';
+import { Environment, Html, useProgress } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { EffectComposer, HueSaturation } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
@@ -57,8 +52,6 @@ const GamePage = () => {
               <Suspense fallback={<Loader />}>
                 <SphereEnv />
                 <Environment background={false} files={hdrTexture} />
-
-                <PerspectiveCamera makeDefault position={[0, 10, 10]} />
 
                 <Rings />
                 <Landscape />
