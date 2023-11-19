@@ -26,7 +26,20 @@ const LuminaSpherePage = () => {
           <div className="p-4">
             <p className="font-semibold text-xl mb-3">Controls</p>
             <ul className="list-disc px-4">
-              <li>teste</li>
+              <li>
+                On the computer, the spotlight will follow the mouse cursor. Use
+                the left mouse button to rotate the scene, and scroll to control
+                zoom.
+              </li>
+              <li>
+                On mobile, simply tap to direct the spotlight and rotate by
+                touching and holding the screen.
+              </li>
+              <li>
+                On any device, there is a GUI that allows you to modify scene
+                characteristics, such as the number of spheres and spotlight
+                properties.
+              </li>
             </ul>
           </div>
         </div>
