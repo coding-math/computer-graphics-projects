@@ -1,9 +1,14 @@
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
+import { useEffect } from 'react';
 import { Footer, LuminaSphere } from '../../components';
 
 const LuminaSpherePage = () => {
+  useEffect(() => {
+    document.title = 'LuminaSphere | Computer Graphics';
+  });
+
   return (
     <div className="bg-raisin">
       <Container className="p-8 bg-raisin  min-h-[88vh]">

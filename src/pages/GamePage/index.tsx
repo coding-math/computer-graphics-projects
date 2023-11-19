@@ -1,7 +1,7 @@
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { Environment, Html, useProgress } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { EffectComposer, HueSaturation } from '@react-three/postprocessing';
@@ -19,6 +19,7 @@ import hdrTexture from '../../assets/textures/envmap.hdr';
 
 const Loader = () => {
   const { progress } = useProgress();
+
   return (
     <Html fullscreen className="bg-black flex justify-center items-center">
       <div className="w-1/2 absolute flex flex-col justify-center items-center bg-black cursor-wait gap-16">
@@ -34,6 +35,10 @@ const Loader = () => {
 };
 
 const GamePage = () => {
+  useEffect(() => {
+    document.title = 'SkyRings | Computer Graphics';
+  });
+
   return (
     <div className="bg-raisin">
       <Container className="p-8 bg-raisin  min-h-[88vh]">

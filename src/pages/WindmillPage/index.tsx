@@ -7,6 +7,8 @@ import { Footer } from '../../components';
 
 const WindmillPage = () => {
   useEffect(() => {
+    document.title = 'Windmill | Computer Graphics';
+
     const maxSpeed = 0.2;
     let windmillAnimationFrameId: number | null = null;
     let isWindmillRotating = false;
@@ -332,6 +334,7 @@ const WindmillPage = () => {
       event.preventDefault();
     });
   }, []);
+
   return (
     <div className="bg-raisin">
       <Container className="p-8 bg-raisin  min-h-[88vh]">

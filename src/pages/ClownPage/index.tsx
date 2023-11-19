@@ -9,6 +9,8 @@ import ClownModel from '../../assets/models/clown.gltf';
 
 const ClownPage = () => {
   useEffect(() => {
+    document.title = 'Clown | Computer Graphics';
+
     let hatDirection = 1;
     const cameraPosition = { x: 0, y: 0 };
     let isHatAnimated = false;
@@ -146,6 +148,7 @@ const ClownPage = () => {
       }
     });
   }, []);
+
   return (
     <div className="bg-raisin">
       <Container className="p-8 bg-raisin  min-h-[88vh]">
