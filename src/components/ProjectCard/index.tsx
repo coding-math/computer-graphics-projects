@@ -1,50 +1,64 @@
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { FaEye } from 'react-icons/fa';
 
 interface ProjectCardProps {
   image: string;
   projectName: string;
   description: string;
   projectPath: string;
+  projectTags?: string[];
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   image,
   projectName,
   description,
-  projectPath
+  projectPath,
+  projectTags
 }) => {
-  const redirectToProject = () => {
-    window.location.href = projectPath;
-  };
-
   return (
-    <Card className="flex flex-col min-h-[300px] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[560px]">
-      <CardMedia component="img" alt={projectName} height="140" image={image} />
-      <CardContent className="flex-grow">
-        <Typography gutterBottom variant="h5" component="div">
-          {projectName}
-        </Typography>
-        <Typography
-          variant="body2"
-          className="lg:max-h-[60px] lg:overflow-y-auto"
-        >
-          {description}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <div className="flex justify-center w-full">
-          <Button size="small" variant="outlined" onClick={redirectToProject}>
-            View Project <FaEye className="ml-1 text-xl" />
-          </Button>
-        </div>
-      </CardActions>
-    </Card>
+    <a href={projectPath} className="no-underline">
+      <Card className="flex flex-col min-h-[300px] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[560px] cursor-pointer group hover:bg-gray-200">
+        <CardMedia
+          component="img"
+          alt={projectName}
+          height="140"
+          image={image}
+        />
+        <CardContent className="flex-grow ">
+          <Typography gutterBottom variant="h5" component="div">
+            {projectName}
+          </Typography>
+          <Typography
+            variant="body2"
+            className="lg:max-h-[60px] lg:overflow-y-auto"
+          >
+            {description}
+          </Typography>
+        </CardContent>
+        {projectTags && (
+          <div className="mx-auto my-2 flex justify-evenly items-center gap-2">
+            {projectTags.map(tag => (
+              <span
+                className={`${
+                  tag === 'Easy'
+                    ? 'bg-green-300 group-hover:bg-green-400'
+                    : tag === 'Medium'
+                    ? 'bg-yellow-300 group-hover:bg-yellow-400'
+                    : tag === 'Hard'
+                    ? 'bg-red-300 group-hover:bg-red-400'
+                    : 'bg-gray-300 group-hover:bg-gray-400'
+                } rounded-full px-3 py-1 text-sm font-semibold`}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </Card>
+    </a>
   );
 };
 
