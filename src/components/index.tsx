@@ -5,3 +5,4 @@ export * from './Landscape';
 export * from './Airplane';
 export * from './Rings';
 export * from './MotionBlur';
+export * from './LuminaSphere';
