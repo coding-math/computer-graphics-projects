@@ -20,28 +20,26 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   return (
     <a href={projectPath} className="no-underline">
-      <Card className="flex flex-col min-h-[300px] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[560px] cursor-pointer group hover:bg-gray-200">
+      <Card className="flex flex-col cursor-pointer group hover:bg-gray-200">
         <CardMedia
           component="img"
           alt={projectName}
           height="140"
           image={image}
         />
-        <CardContent className="flex-grow ">
+        <CardContent className="flex-grow md:min-h-[130px]">
           <Typography gutterBottom variant="h5" component="div">
             {projectName}
           </Typography>
-          <Typography
-            variant="body2"
-            className="lg:max-h-[60px] lg:overflow-y-auto"
-          >
+          <Typography variant="body2" className="max-h-[55px] overflow-y-auto">
             {description}
           </Typography>
         </CardContent>
         {projectTags && (
           <div className="mx-auto my-2 flex justify-evenly items-center gap-2">
-            {projectTags.map(tag => (
+            {projectTags.map((tag, index) => (
               <span
+                key={index}
                 className={`${
                   tag === 'Easy'
                     ? 'bg-green-300 group-hover:bg-green-400'
