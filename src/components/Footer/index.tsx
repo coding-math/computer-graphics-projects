@@ -16,6 +16,7 @@ const Footer = () => {
           <div className="inline-block">❤️</div> by{' '}
           <Link
             href="https://www.github.com/matheuxito"
+            aria-label="Link to matheuxito's GitHub profile"
             underline="hover"
             color="inherit"
             target="_blank"
@@ -24,6 +25,7 @@ const Footer = () => {
           </Link>{' '}
           <a
             href="https://www.github.com/matheuxito"
+            aria-label="Link to matheuxito's GitHub profile"
             target="_blank"
             rel="noreferrer"
           >
@@ -34,6 +36,7 @@ const Footer = () => {
           by{' '}
           <Link
             href="https://www.github.com/matheuxito"
+            aria-label="Link to matheuxito's GitHub profile"
             underline="hover"
             color="inherit"
             target="_blank"
@@ -42,6 +45,7 @@ const Footer = () => {
           </Link>{' '}
           <a
             href="https://www.github.com/matheuxito"
+            aria-label="Link to matheuxito's GitHub profile"
             target="_blank"
             rel="noreferrer"
           >
