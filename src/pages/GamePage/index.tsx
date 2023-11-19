@@ -46,8 +46,8 @@ const GamePage = () => {
         <div className="mb-8 text-4xl font-sans font-semibold text-white text-center mt-4 md:mt-0">
           SkyRings
         </div>
-        <div className="relative bg-white rounded-lg w-full xl:w-4/5 mx-auto">
-          <div id="game-canvas" className="aspect-video rounded-t-lg w-full">
+        <div className="relative bg-white rounded-b-lg w-full xl:w-4/5 mx-auto">
+          <div id="game-canvas" className="aspect-video w-full">
             <Canvas>
               <Suspense fallback={<Loader />}>
                 <SphereEnv />
