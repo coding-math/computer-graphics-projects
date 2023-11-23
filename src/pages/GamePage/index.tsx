@@ -2,7 +2,7 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 import { Suspense, useEffect } from 'react';
-import { Environment, Html, useProgress } from '@react-three/drei';
+import { Environment } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { EffectComposer, HueSaturation } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
@@ -10,29 +10,13 @@ import {
   Airplane,
   Footer,
   Landscape,
+  Loader,
   MotionBlur,
   Rings,
   SphereEnv
 } from '../../components';
 import { Score } from '../../components/UI';
 import hdrTexture from '../../assets/textures/envmap.hdr';
-
-const Loader = () => {
-  const { progress } = useProgress();
-
-  return (
-    <Html fullscreen className="bg-black flex justify-center items-center">
-      <div className="w-1/2 absolute flex flex-col justify-center items-center bg-black cursor-wait gap-16">
-        <div className="text-xl text-white">SkyRings</div>
-        <div className="w-full flex flex-col justify-center items-center">
-          <div className="text-white text-lg">
-            Loading {progress.toFixed()}%
-          </div>
-        </div>
-      </div>
-    </Html>
-  );
-};
 
 const GamePage = () => {
   useEffect(() => {
@@ -54,7 +38,7 @@ const GamePage = () => {
         <div className="relative bg-white rounded-b-lg w-full xl:w-4/5 mx-auto">
           <div id="game-canvas" className="aspect-video w-full">
             <Canvas>
-              <Suspense fallback={<Loader />}>
+              <Suspense fallback={<Loader title="SkyRings" />}>
                 <SphereEnv />
                 <Environment background={false} files={hdrTexture} />
 
