@@ -19,12 +19,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   projectPath,
   projectTags
 }) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const image = new Image();
-    // image.onload = () => setIsLoading(false);
+    image.onload = () => setIsLoading(false);
     image.src = imageUrl;
   }, [imageUrl]);
 
