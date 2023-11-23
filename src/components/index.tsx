@@ -6,3 +6,4 @@ export * from './Airplane';
 export * from './Rings';
 export * from './MotionBlur';
 export * from './LuminaSphere';
+export * from './Loader';

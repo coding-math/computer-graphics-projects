@@ -1,17 +1,16 @@
 import React, { Suspense, useMemo, useRef, useState } from 'react';
 import {
   Environment,
-  Html,
   OrbitControls,
   PerspectiveCamera,
   Sparkles,
-  SpotLight,
-  useProgress
+  SpotLight
 } from '@react-three/drei';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { useControls } from 'leva';
 import * as THREE from 'three';
 import night from '../../assets/textures/night.hdr';
+import { Loader } from '..';
 
 type SphereProps = {
   position?: THREE.Vector3;
@@ -22,23 +21,6 @@ interface SpotlightProps {
   position: THREE.Vector3;
   color: string;
 }
-
-const Loader = () => {
-  const { progress } = useProgress();
-
-  return (
-    <Html fullscreen className="bg-black flex justify-center items-center">
-      <div className="w-1/2 absolute flex flex-col justify-center items-center bg-black cursor-wait gap-16">
-        <div className="text-xl text-white">LuminaSphere</div>
-        <div className="w-full flex flex-col justify-center items-center">
-          <div className="text-white text-lg">
-            Loading {progress.toFixed()}%
-          </div>
-        </div>
-      </div>
-    </Html>
-  );
-};
 
 const Spotlight = ({ point, position, color }: SpotlightProps) => {
   const { intensity, angle, distance } = useControls('spotlight', {
@@ -164,7 +146,7 @@ const LuminaSphere = () => {
 
   return (
     <Canvas shadows dpr={[1, 2]}>
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader title="LuminaSphere" />}>
         <OrbitControls
           makeDefault
           autoRotate
