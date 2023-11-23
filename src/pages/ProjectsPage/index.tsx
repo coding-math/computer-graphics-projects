@@ -17,7 +17,7 @@ const ProjectsPage = () => {
         <Grid container spacing={2} columns={12}>
           <Grid item xs={12} sm={6} md={4}>
             <ProjectCard
-              image={AirplaneImage}
+              imageUrl={AirplaneImage}
               projectName="SkyRings"
               description="SkyRings is my final project, a 3D aviation game crafted using the computer graphics concepts learned throughout the semester."
               projectPath="/skyrings"
@@ -26,7 +26,7 @@ const ProjectsPage = () => {
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
             <ProjectCard
-              image={LuminaSphereImage}
+              imageUrl={LuminaSphereImage}
               projectName="LuminaSphere"
               description="LuminaSphere is a dynamically evolving project delving into the creative interplay of lights in computer graphics."
               projectPath="/luminasphere"
@@ -35,7 +35,7 @@ const ProjectsPage = () => {
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
             <ProjectCard
-              image={WindmillImage}
+              imageUrl={WindmillImage}
               projectName="Windmill"
               description="Experience dynamic rotations within a canvas using keyboard and mouse commands."
               projectPath="/windmill"
@@ -44,7 +44,7 @@ const ProjectsPage = () => {
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
             <ProjectCard
-              image={ClownImage}
+              imageUrl={ClownImage}
               projectName="Clown"
               description="3D clown model with dynamic movements and animations."
               projectPath="/clown"
