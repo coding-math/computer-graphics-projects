@@ -33,4 +33,4 @@ Contributions are welcome! If you would like to contribute to this repository, p
 For details on the credits and attributions for external resources used in these projects, refer to [CREDITS](CREDITS.md).
 
 ## License
-This project is licensed under the [MIT License](LICENSE).
+[MIT](LICENSE) © Matheus Silva
