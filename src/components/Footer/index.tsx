@@ -15,17 +15,17 @@ const Footer = () => {
           Three.js <TbBrandThreejs className="inline-block" /> and{' '}
           <div className="inline-block">❤️</div> by{' '}
           <Link
-            href="https://www.github.com/matheuxito"
-            aria-label="Link to matheuxito's GitHub profile"
+            href="https://www.github.com/math-silva"
+            aria-label="Link to math-silva's GitHub profile"
             underline="hover"
             color="inherit"
             target="_blank"
           >
-            matheuxito
+            math-silva
           </Link>{' '}
           <a
-            href="https://www.github.com/matheuxito"
-            aria-label="Link to matheuxito's GitHub profile"
+            href="https://www.github.com/math-silva"
+            aria-label="Link to math-silva's GitHub profile"
             target="_blank"
             rel="noreferrer"
           >
@@ -35,17 +35,17 @@ const Footer = () => {
         <div className="font-mono whitespace-nowrap inline-block sm:hidden">
           by{' '}
           <Link
-            href="https://www.github.com/matheuxito"
-            aria-label="Link to matheuxito's GitHub profile"
+            href="https://www.github.com/math-silva"
+            aria-label="Link to math-silva's GitHub profile"
             underline="hover"
             color="inherit"
             target="_blank"
           >
-            matheuxito
+            math-silva
           </Link>{' '}
           <a
-            href="https://www.github.com/matheuxito"
-            aria-label="Link to matheuxito's GitHub profile"
+            href="https://www.github.com/math-silva"
+            aria-label="Link to math-silva's GitHub profile"
             target="_blank"
             rel="noreferrer"
           >
