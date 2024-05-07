@@ -10,7 +10,7 @@
 - [License](#license)
 
 ## Author
-- [Matheus Silva](https://www.github.com/matheuxito) | [LinkedIn](https://www.linkedin.com/in/matheuxito/)
+- [Matheus Silva](https://www.github.com/coding-math) | [LinkedIn](https://www.linkedin.com/in/matheussmsilva/)
 
 ## Description
 This repository showcases a series of captivating Computer Graphics projects developed for the UNIFESP (Universidade Federal de São Paulo) course, led by Profª. Dra. Ana Luísa. Leveraging the power of WebGL and Three.js, these projects explore the immersive world of 3D graphics, offering a hands-on experience with cutting-edge web-based technologies. Each project delves into various aspects of computer graphics, providing a comprehensive understanding of topics covered throughout the course.
